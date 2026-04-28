@@ -49,7 +49,6 @@ from estimation.state_estimator import StateEstimator
 from trajectory.lemniscata      import LemniscataTrajectory
 from control.mpc_controller     import MPCController
 
-
 # ════════════════════════════════════════════════════════════════
 #  CONVERSIÓN [v, ω] → [PWM_L, PWM_R]
 # ════════════════════════════════════════════════════════════════
@@ -264,6 +263,8 @@ class RobotController:
             ax.plot(xs_ref, ys_ref, '--', color='gray', lw=1, label='ref')
             ax.plot(self._sim.history_x, self._sim.history_y,
                          color='steelblue', lw=1.5, label='robot')
+            ax.axhline(0, color='black', linewidth=0.8, linestyle='--')
+            ax.axvline(0, color='black', linewidth=0.8, linestyle='--')
             ax.set_aspect('equal')
             ax.set_title('Trayectoria XY')
             ax.legend(); ax.grid(True, alpha=0.3)
@@ -298,7 +299,6 @@ class RobotController:
         log.info("  N=%d  dt=%.3f s  %.0f Hz  A=%.2f m  T=%.1f s",
                  MPC_HORIZON, DT, CONTROL_FREQ, LEMN_AMPLITUDE, LEMN_PERIOD)
         log.info("═" * 55)
-
 
 # ════════════════════════════════════════════════════════════════
 if __name__ == '__main__':

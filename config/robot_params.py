@@ -98,7 +98,7 @@ R: np.ndarray = np.diag([0.5, 1.0])
 # ══════════════════════════════════════════════════
 #  TRAYECTORIA — Lemniscata de Gerono
 # ══════════════════════════════════════════════════
-LEMN_AMPLITUDE: float = 0.30   # [m]  Amplitud de cada lóbulo de la figura ∞.
-                                 #      Ajustar al espacio físico disponible.
-LEMN_PERIOD: float    = 24.0   # [s]  Tiempo para completar una figura ∞ completa.
-                                 #      Aumentar si el robot no puede seguir la velocidad.
+LEMN_AMPLITUDE: float = 1.00   # [m]  Amplitud de cada lóbulo de la figura ∞.
+                                 #      X ∈ [-1, 1] m  |  Y ∈ [-0.5, 0.5] m
+LEMN_PERIOD: float    = 36.0   # [s]  Tiempo para completar una figura ∞ completa.
+                                 #      v_pico = A·(2π/T)·√2 ≈ 0.247 m/s < 0.286 m/s máx robot.

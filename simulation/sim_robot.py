@@ -199,6 +199,8 @@ if __name__ == '__main__':
             lw=1.5, label='robot simulado')
     ax.plot(robot.history_x[0], robot.history_y[0],
             'go', ms=8, label='inicio')
+    ax.axhline(0, color='black', linewidth=0.8, linestyle='--')
+    ax.axvline(0, color='black', linewidth=0.8, linestyle='--')
     ax.set_aspect('equal')
     ax.set_xlabel('X [m]'); ax.set_ylabel('Y [m]')
     ax.set_title('Trayectoria XY')
